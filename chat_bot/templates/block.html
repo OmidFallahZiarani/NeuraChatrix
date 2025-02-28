@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar {
+            background-color: black;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+        }
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        .chat-container {
+            width: 60%;
+            margin: 20px auto;
+            border: 2px solid #fff;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            border-bottom: 2px solid #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .chat-message {
+            background: #444;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin: 5px;
+            max-width: 70%;
+            align-self: flex-end;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .chat-input {
+            display: flex;
+            margin-top: 20px;
+        }
+        .chat-input input {
+            flex: 1;
+            background: transparent;
+            border: 2px solid #fff;
+            padding: 10px;
+            color: #fff;
+        }
+        .chat-input button {
+            background: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .chat-input button:hover {
+            background: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Neura</div>
+        <div class="nav-links">
+            <a href="#">Login</a>
+            <a href="#">Chat</a>
+            <a href="#">About</a>
+        </div>
+    </nav>
+    <div class="hero">
+        <h1>Chatbot</h1>
+        <div class="chat-container">
+            <div class="chat-box" id="chat-box">
+                <p class="chat-message">Welcome to the chatbot! How can I assist you?</p>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function sendMessage() {
+            let input = document.getElementById('user-input');
+            let chatBox = document.getElementById('chat-box');
+            if (input.value.trim() !== "") {
+                let newMessage = document.createElement('p');
+                newMessage.textContent = input.value;
+                newMessage.classList.add('chat-message');
+                chatBox.appendChild(newMessage);
+                input.value = "";
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
+Cpip install tensorflow
+pip install tensorflow
